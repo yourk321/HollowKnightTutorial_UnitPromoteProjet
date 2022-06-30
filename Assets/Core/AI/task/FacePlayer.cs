@@ -18,7 +18,6 @@ namespace Core.AI{
         {
             var scale = transform.localScale;
             scale.x = transform.position.x > player.transform.position.x ? -baseScaleX : baseScaleX;
-            Debug.LogError(scale.x);
             transform.localScale = scale;
             return TaskStatus.Success;
         }
