@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 572bd2c8636b4db8b3de83ec8ccd5619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitType: 0
+  hitType: 3
   disableHitEffect: 0
   spriteParent: {fileID: 0}
   customHitEffect: {fileID: 0}
