@@ -38,6 +38,7 @@ namespace Core.Combat.Projectiles
                 return;
 
             // Projectile hit player
+            //Debug.LogError(collision.gameObject.name);
             var player = collision.GetComponent<PlayerController>();
             if (player != null)
             {

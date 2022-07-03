@@ -498,6 +498,7 @@ namespace Core.Character
             }
 
             //SoundManager.Instance.PlaySound(deathSound, 1, audioSource);
+            Debug.LogError("player DEAD!");
             isDying = true;
             animator.SetBool("IsDying", true);
 
