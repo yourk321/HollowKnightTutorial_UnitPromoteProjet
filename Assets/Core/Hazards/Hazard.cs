@@ -28,7 +28,7 @@ namespace Core.Hazards
                 float multiplier = recoilDirection.y < 0 ? 1.0f : 500.0f;
                 Vector2 recoilForce = recoilDirection * multiplier;
 
-                Debug.LogWarning("player hurt:" + damage);
+                Debug.LogWarning("player hurt:" + damage + collider.gameObject.name);
 
                 player.Hurt(damage, recoilForce, killRecoil: false);
             }

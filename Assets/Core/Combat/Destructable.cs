@@ -32,8 +32,10 @@ namespace Core.Combat
         public void DealDamage(int damage)
         {
             CurrentHealth -= damage;
+            Debug.LogError("boss hurt!");
             if (CurrentHealth <= 0)
             {
+                Debug.LogError("boss DEAD!");
                 OnDestroyed?.Invoke();
             }
         }

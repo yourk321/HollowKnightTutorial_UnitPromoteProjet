@@ -141,7 +141,7 @@ namespace Core.Character
             physicsMaterial = collider.sharedMaterial;
 
             PlayerData = new PlayerData();
-            PlayerData.maxHP = 100;
+            PlayerData.maxHP = 500;
             PlayerData.HP = PlayerData.maxHP;
 
             combatLayerMask = ~LayerMask.GetMask("Player");
