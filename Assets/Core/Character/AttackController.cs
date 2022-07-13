@@ -59,7 +59,7 @@ namespace Core.Character
 
                 float raySpacing = 6; // How much space between the raycasts (in degrees)
                 for (int i = -2; i < 2; i++)
-                {
+                { 
                     float deltaAngle = i * raySpacing * Mathf.Deg2Rad;
 
                     // Rotate direction vector by angle offset
@@ -74,6 +74,7 @@ namespace Core.Character
 
                     if (hit)
                     {
+                        Debug.Log(hit.collider.gameObject.name);
                         if (attackVictims.Contains(hit.collider.gameObject))
                             continue;
 

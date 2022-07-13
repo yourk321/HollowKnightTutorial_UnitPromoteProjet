@@ -27,15 +27,15 @@ namespace Core.Combat
             DealDamage(damage);
 
             base.OnAttackHit(position, force, damage); // Order of this call is important
-        }
+        } 
 
         public void DealDamage(int damage)
         {
             CurrentHealth -= damage;
-            Debug.LogError("boss hurt!");
+            Debug.LogWarning(this.gameObject.name + " hurt!");
             if (CurrentHealth <= 0)
             {
-                Debug.LogError("boss DEAD!");
+                Debug.LogError(this.gameObject.name + " DEAD!");
                 OnDestroyed?.Invoke();
             }
         }

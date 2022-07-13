@@ -2106,6 +2106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword Slash
       objectReference: {fileID: 0}
+    - target: {fileID: 8169938524744447423, guid: 39a3a55a62d49004d979995918e1d952, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8176147346164747927, guid: 39a3a55a62d49004d979995918e1d952, type: 3}
       propertyPath: m_RootOrder
       value: 0

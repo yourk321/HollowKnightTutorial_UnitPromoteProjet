@@ -160,7 +160,7 @@ MonoBehaviour:
   customHitSound: {fileID: 0}
   hideWhenDead: 0
   hitMaterial: {fileID: 2100000, guid: d28059583e1a40249ad8daa3586d8028, type: 2}
-  health: 10
+  health: 40
 --- !u!58 &681214210006648758
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -174,9 +174,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.60508645}
+  m_Offset: {x: 0.033990562, y: 0.60508645}
   serializedVersion: 2
-  m_Radius: 0.6485542
+  m_Radius: 0.84872305
 --- !u!114 &9109803277298375649
 MonoBehaviour:
   m_ObjectHideFlags: 0
