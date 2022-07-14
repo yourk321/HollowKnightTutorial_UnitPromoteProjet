@@ -1154,7 +1154,6 @@ Transform:
   - {fileID: 728869807}
   - {fileID: 1075817260}
   - {fileID: 1853063935}
-  - {fileID: 1159439356}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1379,7 +1378,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075817257}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1457,16 +1456,6 @@ Transform:
   m_Father: {fileID: 228500372}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &1159439354 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 867246214757349016, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-  m_PrefabInstance: {fileID: 1656888488}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1159439356 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-  m_PrefabInstance: {fileID: 1656888488}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1175664248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,7 +1652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCollider: {fileID: 1075817258}
-  impactEffect: {fileID: 1159439354}
+  impactEffect: {fileID: 0}
   impactTransform: {fileID: 728869807}
   cameraShakeIntensity: 0.2
 --- !u!1 &1343937554
@@ -1935,63 +1924,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b423862f2a24714d85d03367b52df85, type: 3}
---- !u!1001 &1656888488
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 826750656}
-    m_Modifications:
-    - target: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 867246214757349017, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 867246214757349094, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
-      propertyPath: m_Name
-      value: Weapon Impact
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8fbed873f1be056428a5bb5a3089cb63, type: 3}
 --- !u!1 &1739224368
 GameObject:
   m_ObjectHideFlags: 0
