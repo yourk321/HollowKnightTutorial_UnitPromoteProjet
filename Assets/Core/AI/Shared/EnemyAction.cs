@@ -9,6 +9,7 @@ namespace Core.AI
     {
         protected Rigidbody2D body;
         protected BoxCollider2D attackCollider;
+        protected BoxCollider2D hazardCollider;
         protected Animator animator;
         protected Destructable destructable;
         protected PlayerController player;
@@ -17,6 +18,8 @@ namespace Core.AI
         {
             body = GetComponent<Rigidbody2D>();
             attackCollider =  this.transform.Find("attack collider").GetComponent<BoxCollider2D>();
+            hazardCollider =  this.transform.Find("hazard collider").GetComponent<BoxCollider2D>();
+
             player = PlayerController.Instance;
             destructable = GetComponent<Destructable>();
             animator = gameObject.GetComponentInChildren<Animator>();

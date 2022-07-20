@@ -8,6 +8,7 @@ namespace Core.AI
     {
         public override void OnStart()
         {
+            hazardCollider.enabled = false;//
             attackCollider.enabled = false;//关闭攻击区域
         }
 

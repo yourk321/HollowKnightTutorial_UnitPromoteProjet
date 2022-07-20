@@ -11,6 +11,7 @@ namespace Core.AI
      
         public override TaskStatus OnUpdate()
         {
+            hazardCollider.enabled = true;
             destructable.CurrentHealth = Health.Value;
             return TaskStatus.Success;
         }
