@@ -23,6 +23,9 @@ namespace Core.Character
 
         private PlayerController _playerController;
 
+        public AudioSource source;
+        public AudioClip attackSound;
+
         void Awake()
         {
             _playerController = GetComponent<PlayerController>();
@@ -56,6 +59,7 @@ namespace Core.Character
                 attackTargetTransform.rotation = thrustQuaternion;
 
                 currentThrustParticles.Play();
+                source.PlayOneShot(attackSound);
 
                 float raySpacing = 6; // How much space between the raycasts (in degrees)
                 for (int i = -2; i < 2; i++)
@@ -96,6 +100,7 @@ namespace Core.Character
 
                             // Minor camera shake
                             CameraController.Instance.ShakeCamera(0.05f, 0.5f);
+
                         }
                         else
                         {
