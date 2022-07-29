@@ -19,6 +19,7 @@ namespace Core.AI
             maggot.transform.localPosition = Vector3.zero;
             destructable.Invincible = true;
             hazardCollider.SetActive(false);
+
         }
 
         public override TaskStatus OnUpdate()
@@ -26,7 +27,6 @@ namespace Core.AI
             if (maggot.CurrentHealth > 0) return TaskStatus.Running;
             destructable.Invincible = false;
             hazardCollider.SetActive(true);
-
             return TaskStatus.Success;
         }
     }
