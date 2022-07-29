@@ -72,42 +72,46 @@ namespace Core.Character
 
                     Vector2 targetDir = new Vector2((cos * tx) - (sin * ty), (sin * tx) + (cos * ty));
 
-                    var hit = Physics2D.Raycast(attackSourceTransform.position, targetDir, attackRadius + 1.5f,
+                    var hitArray = Physics2D.RaycastAll(attackSourceTransform.position, targetDir, attackRadius + 1.5f,
                         attackLayerMask);
-                    Debug.DrawRay(attackSourceTransform.position, targetDir, Color.red);
+                    Debug.DrawRay(attackSourceTransform.position, targetDir*10, Color.red, 1.0f);
 
-                    if (hit)
+                    if (hitArray != null)
                     {
-                        Debug.Log(hit.collider.gameObject.name);
-                        if (attackVictims.Contains(hit.collider.gameObject))
-                            continue;
-
-                        attackVictims.Add(hit.collider.gameObject);
-
-                        // First, check if it is a hittable
-                        var hittable = hit.collider.GetComponent<Hittable>();
-                        if (hittable != null)
+                        foreach(var hit in hitArray)
                         {
-                            hittable.OnAttackHit(hit.point, targetDir * 4.0f, 5);
+                            Debug.Log(hit.collider.gameObject.name);
+                            if (attackVictims.Contains(hit.collider.gameObject))
+                                continue;
 
-                            // If it is an enemy, perform extra actions (e.g. player recoil)
-                            var recoilForce = -targetDir * attackRecoil; // Player Recoil -> treat carefully!
-                            if (hit.point.y < transform.position.y)
-                                recoilForce.y *= pogoRecoilMultiplier;
+                            attackVictims.Add(hit.collider.gameObject);
 
-                            recoilForce.y = Mathf.Max(-20.0f, recoilForce.y);
-                            _playerController.DoRecoil(recoilForce, true);
+                            // First, check if it is a hittable
+                            var hittable = hit.collider.GetComponent<Hittable>();
+                            if (hittable != null)
+                            {
+                                hittable.OnAttackHit(hit.point, targetDir * 4.0f, 5);
 
-                            // Minor camera shake
-                            CameraController.Instance.ShakeCamera(0.05f, 0.5f);
+                                // If it is an enemy, perform extra actions (e.g. player recoil)
+                                var recoilForce = -targetDir * attackRecoil; // Player Recoil -> treat carefully!
+                                if (hit.point.y < transform.position.y)
+                                    recoilForce.y *= pogoRecoilMultiplier;
 
+                                recoilForce.y = Mathf.Max(-20.0f, recoilForce.y);
+                                _playerController.DoRecoil(recoilForce, true);
+
+                                // Minor camera shake
+                                CameraController.Instance.ShakeCamera(0.05f, 0.5f);
+
+                            }
+                            else
+                            {
+                                // Otherwise, play default particles and SFX
+                            }
+
+                            attackCooldown = cooldown;
                         }
-                        else
-                        {
-                            // Otherwise, play default particles and SFX
-                        }
-
-                        attackCooldown = cooldown;
+                        
                     }
                 }
 
